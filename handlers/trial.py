@@ -6,7 +6,8 @@ from sqlalchemy import select
 from database.db import async_session
 from database.models import Panel, Service, User
 from panels import get_panel_adapter
-from utils.texts import get_setting, format_date, t
+from utils.helpers import format_date
+from utils.texts import get_setting, t
 
 router = Router()
 
