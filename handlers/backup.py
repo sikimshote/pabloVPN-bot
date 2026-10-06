@@ -1,7 +1,7 @@
 import os
 import shutil
 from datetime import datetime
-from aiogram import Router, F
+from aiogram import Router, F, Bot
 from aiogram.types import Message, FSInputFile
 from aiogram.fsm.context import FSMContext
 
