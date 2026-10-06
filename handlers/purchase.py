@@ -7,7 +7,8 @@ from database.db import async_session
 from database.models import Plan, Panel, Service, User, Transaction
 from panels import get_panel_adapter
 from utils.keyboards import plans_kb
-from utils.texts import format_date, t
+from utils.helpers import format_date
+from utils.texts import t
 
 router = Router()
 
@@ -46,7 +47,6 @@ async def select_plan(callback: CallbackQuery):
         await callback.answer()
         return
 
-    # پردازش ساخت اکانت روی پنل
     async with async_session() as session:
         panel_res = await session.execute(select(Panel).where(Panel.id == plan.panel_id))
         panel_obj = panel_res.scalar_one_or_none()
